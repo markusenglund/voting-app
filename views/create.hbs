@@ -1,0 +1,24 @@
+<div class="col-sm-offset-2">
+    <h2>Create a new poll</h2>
+    <form action="/polls/create" method="post">
+        <div class="form-group">
+            <label for="question">Question</label>
+            <input type="text" name="question" class="form-control" maxlength="40" required >
+        </div>
+        <div class="form-group">
+            <label for="options">Answer</label>
+            <input type="text" name="options" class="form-control" maxlength="30" required>
+        </div>
+        <div class="form-group">
+            <label for="options">Answer</label>
+            <input type="text" name="options" class="form-control" maxlength="30" required>
+        </div>
+        <div id="more-options"></div>
+        <button type="button" class="btn btn-default btn-lg" id="plus">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+        <br><br>                    
+        <div><button class="btn btn-primary" type="submit">Submit poll</button></div>        
+    </form>
+</div>
+

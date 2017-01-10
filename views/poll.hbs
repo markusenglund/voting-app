@@ -1,0 +1,28 @@
+<h2 class="text-center">{{ poll.question }}</h2>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <ul class="list-group">
+            {{# each poll.answers }}
+                <a href="/polls/{{ ../poll._id }}/options/{{ this._id }}">
+                    <li class="list-group-item">
+                        {{ this.answer }}
+                        <span class="badge">{{ this.votes }}</span>
+                    </li></a>
+            {{/each}}
+            <br>
+            {{# if isAuthenticated }}
+                <button type="button" class="btn btn-default btn-sm" id="plus">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add another option
+                </button>
+                <form class="hidden" id="add-option" action="" method="post">
+                    <div class="form-group">
+                        <label for="option">New option</label>
+                        <input type="text" name="option" class="form-control" maxlength="30" required>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit & vote</button>
+                    <span id="cancel" class="btn btn-default">Cancel</span>
+                </form>
+            {{/if}}
+        </ul>
+    </div>
+</div>

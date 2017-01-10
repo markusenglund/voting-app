@@ -1,0 +1,18 @@
+<h1 class="text-center">Voting app</h1>
+{{# if isAuthenticated }}
+    <div class="text-center">
+        <a href="polls/create"><button class="btn btn-success">Create a new poll</button></a>
+    </div>
+{{/if}}
+<br>
+<br>
+<h4 class="text-center">Current polls</h4>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <ul class="list-group">
+            {{# each polls}}
+                <a href="/polls/{{this._id}}"><li class="list-group-item">{{this.question}}</li></a>
+            {{/each}}
+        </ul>
+    </div>
+</div>
